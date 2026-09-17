@@ -1,0 +1,17 @@
+{
+    "id": "devvim",
+    "version": "0.1.0",
+    "name": "DevVim",
+    "description": "Installs Neovim for DevVim development environments.",
+    "documentationURL": "https://github.com/baltej223/devvim-feature",
+    "options": {
+        "version": {
+            "type": "string",
+            "proposals": [
+                "latest"
+            ],
+            "default": "latest",
+            "description": "Neovim version to install."
+        }
+    }
+}
