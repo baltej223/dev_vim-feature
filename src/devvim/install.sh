@@ -1,7 +1,5 @@
 #!/bin/bash
-
 set -e
-
 install_dependencies() {
     if command -v apt-get >/dev/null 2>&1; then
         apt-get update
@@ -22,7 +20,6 @@ install_dependencies() {
         exit 1
     fi
 }
-
 install_dependencies
 
 ARCH="$(uname -m)"
@@ -61,6 +58,5 @@ tar \
 ln -sf /opt/nvim/bin/nvim /usr/local/bin/nvim
 
 rm -rf "$TMP_DIR"
-
 echo "DevVim installed:"
 nvim --version | head -n 1
