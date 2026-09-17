@@ -1,4 +1,4 @@
-name: Release DevVim Feature
+name: Publish DevVim Feature
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Log in to GHCR
@@ -27,8 +27,8 @@ jobs:
       - name: Install Dev Container CLI
         run: npm install -g @devcontainers/cli
 
-      - name: Publish Feature
+      - name: Publish DevVim Feature
         run: |
-          devcontainer features publish \
-            ./src/devvim \
-            ghcr.io/${{ github.repository_owner }}/devvim/devvim
+          devcontainer features publish ./src \
+            --registry ghcr.io \
+            --namespace "${{ github.repository_owner }}/devvim-feature"
